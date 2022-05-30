@@ -1,0 +1,23 @@
+site_name: dweeter
+site_description: A python module for messaging through the free dweet service.
+site_author: Quan Lin
+
+repo_url: https://github.com/jacklinquan/dweeter
+edit_uri: ""
+
+theme:
+    name: readthedocs
+
+docs_dir: md_docs
+
+site_dir: docs
+
+nav:
+    - Home: index.md
+    - API Documentation: api.md
+
+copyright: Copyright &copy; 2022 <a href="https://github.com/jacklinquan">Quan Lin</a>.
+
+plugins:
+    - search
+    - mkapi
