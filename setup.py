@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="dweeter",
-    version="0.1.0",
+    version="0.2.0",
     description="A python module for messaging through the free dweet service.",
     long_description="https://github.com/jacklinquan/dweeter",
     long_description_content_type="text/markdown",

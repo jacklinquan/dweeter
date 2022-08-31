@@ -4,13 +4,15 @@
 - License: MIT
 """
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 __all__ = ["DweeterError", "Dweeter"]
 
 import time
 import json
 from hashlib import sha256
 from cryptodweet import CryptoDweet, to_bytes, from_bytes
+
+BASE_URL = "https://dweet.io"
 
 
 class DweeterError(Exception):
@@ -26,10 +28,13 @@ class Dweeter:
         A virtual mailbox through the free dweet service.
     key : str
         The key to the virtual mailbox.
-    debug: bool, optional
+    debug : bool, optional
         If it is `True`, exceptions will be printed.
         Otherwise exceptions will be swallowed silently.
         (default is `False`)
+    base_url : str, optional
+        The base url of the dweet server.
+        (default is "https://dweet.io")
 
     Attributes
     ----------
@@ -56,12 +61,18 @@ class Dweeter:
 
     utc_format = "{:04d}-{:02d}-{:02d}T{:02d}:{:02d}:{:02d}.000Z"
 
-    def __init__(self, mailbox="default mailbox", key="default key", debug=False):
+    def __init__(
+        self,
+        mailbox="default mailbox",
+        key="default key",
+        debug=False,
+        base_url=BASE_URL,
+    ):
         self.mailbox = mailbox
         hash_result = sha256(to_bytes(key)).digest()
         cd_key = hash_result[:16]
         cd_iv = hash_result[16:]
-        self._cd = CryptoDweet(cd_key, cd_iv)
+        self._cd = CryptoDweet(cd_key, cd_iv, base_url=base_url)
         self.debug = debug
         self.latest = None
 
