@@ -1,0 +1,26 @@
+[build-system]
+requires      = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dweeter"
+version = "0.3.0"
+description = "Encrypted messaging through the free dweet service."
+readme = "README.md"
+authors = [{ name = "Quan Lin", email = "jacklinquan@gmail.com" }]
+license = { file = "LICENSE" }
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+]
+keywords = ["dweet"]
+dependencies = ["basicdweet", "cryptomsg"]
+requires-python = ">=3.7"
+
+[project.optional-dependencies]
+aiohttp = ["aiohttp"]
+dev = ["aiohttp", "black", "pytest"]
+
+[project.urls]
+Homepage = "https://github.com/jacklinquan/dweeter"

@@ -1,376 +1,868 @@
-<!DOCTYPE html>
-<html class="writer-html5" lang="en" >
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Quan Lin" />
-      <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>API Documentation - dweeter</title>
-    <link rel="stylesheet" href="../css/theme.css" />
-    <link rel="stylesheet" href="../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
-        <link href="//use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet" />
-        <link href="//use.fontawesome.com/releases/v5.8.1/css/v4-shims.css" rel="stylesheet" />
-        <link href="../css/mkapi-common.css" rel="stylesheet" />
-        <link href="../css/mkapi-readthedocs.css" rel="stylesheet" />
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
     
-      <script>
-        // Current page data
-        var mkdocs_page_name = "API Documentation";
-        var mkdocs_page_input_path = "api.md";
-        var mkdocs_page_url = null;
-      </script>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Encrypted messaging through the free dweet service.">
+      
+      
+        <meta name="author" content="Quan Lin">
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.28">
     
-    <script src="../js/jquery-3.6.0.min.js" defer></script>
-    <!--[if lt IE 9]>
-      <script src="../js/html5shiv.min.js"></script>
-    <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-      <script>hljs.initHighlightingOnLoad();</script> 
-</head>
+    
+      
+        <title>API Documentation - Dweeter</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6543a935.min.css">
+      
+      
 
-<body class="wy-body-for-nav" role="document">
 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-    <div class="wy-side-scroll">
-      <div class="wy-side-nav-search">
-          <a href=".." class="icon icon-home"> dweeter
-        </a><div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
-  </form>
-</div>
-      </div>
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../mkapi-common.css">
+    
+      <link rel="stylesheet" href="../mkapi-material.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
-                </li>
-              </ul>
-              <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="./">API Documentation</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#dweeter">dweeter</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#dweeterdweetererror">DweeterError</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#dweeterdweeter">Dweeter</a>
-    </li>
-        </ul>
-    </li>
-    </ul>
-                </li>
-              </ul>
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#api-documentation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Dweeter" class="md-header__button md-logo" aria-label="Dweeter" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dweeter
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              API Documentation
+            
+          </span>
+        </div>
       </div>
     </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="..">dweeter</a>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
         
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
       </nav>
-      <div class="wy-nav-content">
-        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-      <li>API Documentation</li>
-    <li class="wy-breadcrumbs-aside">
-    </li>
-  </ul>
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-            <div class="section" itemprop="articleBody">
-              
-                <h1 id="api-documentation">API Documentation</h1>
-<div class="mkapi-node" id="dweeter">
-<div class='mkapi-object-container'>
-  <div class="mkapi-object package plain top">
-    <div class="mkapi-object-kind package top">package</div>
-    <h2 id="dweeter" class="mkapi-object-body package top"><span class="mkapi-object-name">dweeter</span></h2>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
   </div>
-  
 </div>
-<div class="mkapi-docstring">
-<div class="mkapi-section">
-      <div class="mkapi-section-body"><p>A python module for messaging through the free dweet service.</p>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/jacklinquan/dweeter" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Dweeter" class="md-nav__button md-logo" aria-label="Dweeter" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Dweeter
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/jacklinquan/dweeter" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    API Documentation
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    API Documentation
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dweeter_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      dweeter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cryptodweet" class="md-nav__link">
+    <span class="md-ellipsis">
+      CryptoDweet
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dweeter_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dweeter
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dweeter_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      dweeter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cryptodweet" class="md-nav__link">
+    <span class="md-ellipsis">
+      CryptoDweet
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dweeter_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dweeter
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="api-documentation">API Documentation</h1>
+<hr />
+<h2 id="dweeter_1">dweeter</h2>
+<div class="mkapi-content">
+<p class="mkapi-heading" id="dweeter">
+<span class="mkapi-heading-name">dweeter</span>
+<span class="mkapi-source-link"></span>
+</p>
+<p class="mkapi-object">
+  <span class="mkapi-object-kind">package</span>
+  <span class="mkapi-object-name"><span class="mkapi-name">dweeter</span></span></p>
+<p>Encrypted messaging through the free dweet service.</p>
 <ul>
 <li>Author: Quan Lin</li>
 <li>License: MIT</li>
-</ul></div>
-    </div>
-  <div class="mkapi-section classes">
-      <div class="mkapi-section-name classes">
-          <span class="mkapi-section-name-body classes">Classes</span> 
-        </div>
-      <div class="mkapi-section-body classes"><ul class="mkapi-items">
-<li class="class"><code class="mkapi-item-name"><a href="#dweeter.DweeterError">DweeterError</a></code>
-
-<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Common base class for all non-exit exceptions.</span></li>
-
-<li class="class"><code class="mkapi-item-name"><a href="#dweeter.Dweeter">Dweeter</a></code>
-
-<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">A class for messaging through the free dweet service.</span></li>
-
-
-</ul></div>
-    </div>
-  </div>
-
-  <div class="mkapi-members">
-  
-    <div class="mkapi-member">
-      <div class="mkapi-node" id="dweeter.DweeterError">
-<div class='mkapi-object-container'>
-  <div class="mkapi-object class code top">
-    <div class="mkapi-object-kind class top">class</div>
-    <h3 id="dweeterdweetererror" class="mkapi-object-body class top"><code class="mkapi-object-prefix">dweeter.</code><code class="mkapi-object-name">DweeterError</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-parenthesis">)</code></h3>
-  </div>
-  
+</ul>
+<p class="mkapi-section"><span class="mkapi-section-name">Classes</span></p>
+<ul>
+<li>
+<p><span class="mkapi-item-type"><span class="mkapi-tooltip" title="dweeter.dweeter.DweeterError">DweeterError</span></span>
+  </p>
+</li>
+<li>
+<p><span class="mkapi-item-type"><span class="mkapi-tooltip" title="dweeter.dweeter.CryptoDweet">CryptoDweet</span></span> &mdash;
+A class for the free dweet service with encryption.
+  </p>
+</li>
+<li>
+<p><span class="mkapi-item-type"><span class="mkapi-tooltip" title="dweeter.dweeter.Dweeter">Dweeter</span></span> &mdash;
+A class for encrypted messaging through the free dweet service.
+  </p>
+</li>
+</ul>
 </div>
-<div class="mkapi-docstring">
-<div class="mkapi-section bases">
-      <div class="mkapi-section-name bases">
-          <span class="mkapi-section-name-body bases">Bases</span> 
-        </div>
-      <div class="mkapi-section-body bases">
-<span class="mkapi-base">Exception</span>
-
-<span class="mkapi-base">BaseException</span>
+<hr />
+<h2 id="cryptodweet">CryptoDweet</h2>
+<div class="mkapi-content">
+<p class="mkapi-heading" id="dweeter.dweeter.CryptoDweet">
+<span class="mkapi-heading-name"><span class="mkapi-tooltip" title="dweeter">dweeter</span>.<span class="mkapi-tooltip" title="dweeter.dweeter">dweeter</span>.CryptoDweet</span>
+<span class="mkapi-source-link"></span>
+</p>
+<p class="mkapi-object">
+  <span class="mkapi-object-kind">class</span>
+  <span class="mkapi-object-name"><span class="mkapi-name">CryptoDweet</span></span><span class="mkapi-signature"><span class="mkapi-paren">(</span><span class="mkapi-arg">aes_cbc_key</span><span class="mkapi-colon">: </span><span class="mkapi-ann">bytes</span><span class="mkapi-equal"> = </span><span class="mkapi-default">b'aes_cbc_key'</span><span class="mkapi-comma">, </span><span class="mkapi-arg">aes_cbc_iv</span><span class="mkapi-colon">: </span><span class="mkapi-ann">bytes</span><span class="mkapi-equal"> = </span><span class="mkapi-default">b'aes_cbc_iv'</span><span class="mkapi-comma">, </span><span class="mkapi-arg">base_url</span><span class="mkapi-colon">: </span><span class="mkapi-ann">str</span><span class="mkapi-equal"> = </span><span class="mkapi-default">DEFAULT_BASE_URL</span><span class="mkapi-comma">, </span><span class="mkapi-arg">use_base64</span><span class="mkapi-colon">: </span><span class="mkapi-ann">bool</span><span class="mkapi-equal"> = </span><span class="mkapi-default">False</span><span class="mkapi-paren">)</span></span></p>
+<p>A class for the free dweet service with encryption.</p>
+<p>Initialization options:</p>
+<ul>
+<li><code>CryptoDweet()</code>: With default key and iv, not secure.</li>
+<li><code>CryptoDweet(b"YOUR_KEY")</code>: Only set key, with default iv.</li>
+<li><code>CryptoDweet(b"YOUR_KEY", b"YOUR_IV")</code>: Set both key and iv, strongest encryption.</li>
+</ul>
+<p class="mkapi-section"><span class="mkapi-section-name">Parameters</span></p>
+<ul>
+<li>
+<p><span class="mkapi-item-name">aes_cbc_key</span>
+   &mdash;
+The key of AES CBC mode.
+  </p>
+</li>
+<li>
+<p><span class="mkapi-item-name">aes_cbc_iv</span>
+   &mdash;
+The IV of AES CBC mode.
+  </p>
+</li>
+<li>
+<p><span class="mkapi-item-name">base_url</span>
+   &mdash;
+The base url of the dweet server.
+  </p>
+</li>
+<li>
+<p><span class="mkapi-item-name">use_base64</span>
+   &mdash;
+Use base64 to make dweet content dictionary more compact.
+  </p>
+</li>
+</ul>
+<p class="mkapi-section"><span class="mkapi-section-name">Methods</span></p>
+<ul>
+<li>
+<p><span class="mkapi-item-type"><span class="mkapi-tooltip" title="dweeter.dweeter.CryptoDweet.dweet_for">dweet_for</span></span> &mdash;
+The "dweet for" API.
+  </p>
+</li>
+<li>
+<p><span class="mkapi-item-type"><span class="mkapi-tooltip" title="dweeter.dweeter.CryptoDweet.get_latest_dweet_for">get_latest_dweet_for</span></span> &mdash;
+The "get latest dweet for" API.
+  </p>
+</li>
+<li>
+<p><span class="mkapi-item-type"><span class="mkapi-tooltip" title="dweeter.dweeter.CryptoDweet.get_dweets_for">get_dweets_for</span></span> &mdash;
+The "get dweets for" API.
+  </p>
+</li>
+<li>
+<p><span class="mkapi-item-type"><span class="mkapi-tooltip" title="dweeter.dweeter.CryptoDweet.async_dweet_for">async_dweet_for</span></span> &mdash;
+The async "dweet for" API.
+  </p>
+</li>
+<li>
+<p><span class="mkapi-item-type"><span class="mkapi-tooltip" title="dweeter.dweeter.CryptoDweet.async_get_latest_dweet_for">async_get_latest_dweet_for</span></span> &mdash;
+The async "get latest dweet for" API.
+  </p>
+</li>
+<li>
+<p><span class="mkapi-item-type"><span class="mkapi-tooltip" title="dweeter.dweeter.CryptoDweet.async_get_dweets_for">async_get_dweets_for</span></span> &mdash;
+The async "get dweets for" API.
+  </p>
+</li>
+</ul>
 </div>
-    </div>
-  <div class="mkapi-section">
-      <div class="mkapi-section-body"><p>Common base class for all non-exit exceptions.</p></div>
-    </div>
-  </div>
-
+<hr />
+<div class="mkapi-content">
+<p class="mkapi-heading" id="dweeter.dweeter.CryptoDweet.dweet_for">
+<span class="mkapi-heading-name"><span class="mkapi-tooltip" title="dweeter">dweeter</span>.<span class="mkapi-tooltip" title="dweeter.dweeter">dweeter</span>.<span class="mkapi-tooltip" title="dweeter.dweeter.CryptoDweet">CryptoDweet</span>.dweet_for</span>
+<span class="mkapi-source-link"></span>
+</p>
+<p class="mkapi-object">
+  <span class="mkapi-object-kind">method</span>
+  <span class="mkapi-object-name"><span class="mkapi-prefix">CryptoDweet</span><span class="mkapi-dot">.</span><span class="mkapi-name">dweet_for</span></span><span class="mkapi-signature"><span class="mkapi-paren">(</span><span class="mkapi-arg">thing</span><span class="mkapi-colon">: </span><span class="mkapi-ann">str</span><span class="mkapi-comma">, </span><span class="mkapi-arg">content_dict</span><span class="mkapi-colon">: </span><span class="mkapi-ann">dict[str, str]</span><span class="mkapi-paren">)</span><span class="mkapi-arrow"> → </span><span class="mkapi-return">dict</span></span></p>
+<p>The "dweet for" API.</p>
+<p class="mkapi-section"><span class="mkapi-section-name">Parameters</span></p>
+<ul>
+<li>
+<p><span class="mkapi-item-name">thing</span> : 
+  <span class="mkapi-item-type">str</span> &mdash;
+The thing name.
+  </p>
+</li>
+<li>
+<p><span class="mkapi-item-name">content_dict</span> : 
+  <span class="mkapi-item-type">dict[str, str]</span> &mdash;
+The content dict.
+  </p>
+</li>
+</ul>
+<p class="mkapi-section"><span class="mkapi-section-name">Returns</span></p>
+<ul>
+<li>
+<p><span class="mkapi-item-type">dict</span> &mdash;
+The result dict of "dweet for" API.
+  </p>
+</li>
+</ul>
 </div>
-    </div>
-  
-    <div class="mkapi-member">
-      <div class="mkapi-node" id="dweeter.Dweeter">
-<div class='mkapi-object-container'>
-  <div class="mkapi-object class code top">
-    <div class="mkapi-object-kind class top">class</div>
-    <h3 id="dweeterdweeter" class="mkapi-object-body class top"><code class="mkapi-object-prefix">dweeter.</code><code class="mkapi-object-name">Dweeter</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">mailbox=&#39;default mailbox&#39;</code>, <code class="mkapi-object-signature">key=&#39;default key&#39;</code>, <code class="mkapi-object-signature">debug=False</code>, <code class="mkapi-object-signature">base_url=&#39;https://dweet.io&#39;</code><code class="mkapi-object-parenthesis">)</code></h3>
-  </div>
-  
+<hr />
+<div class="mkapi-content">
+<p class="mkapi-heading" id="dweeter.dweeter.CryptoDweet.get_latest_dweet_for">
+<span class="mkapi-heading-name"><span class="mkapi-tooltip" title="dweeter">dweeter</span>.<span class="mkapi-tooltip" title="dweeter.dweeter">dweeter</span>.<span class="mkapi-tooltip" title="dweeter.dweeter.CryptoDweet">CryptoDweet</span>.get_latest_dweet_for</span>
+<span class="mkapi-source-link"></span>
+</p>
+<p class="mkapi-object">
+  <span class="mkapi-object-kind">method</span>
+  <span class="mkapi-object-name"><span class="mkapi-prefix">CryptoDweet</span><span class="mkapi-dot">.</span><span class="mkapi-name">get_latest_dweet_for</span></span><span class="mkapi-signature"><span class="mkapi-paren">(</span><span class="mkapi-arg">thing</span><span class="mkapi-colon">: </span><span class="mkapi-ann">str</span><span class="mkapi-paren">)</span><span class="mkapi-arrow"> → </span><span class="mkapi-return">list</span></span></p>
+<p>The "get latest dweet for" API.</p>
+<p class="mkapi-section"><span class="mkapi-section-name">Parameters</span></p>
+<ul>
+<li>
+<p><span class="mkapi-item-name">thing</span> : 
+  <span class="mkapi-item-type">str</span> &mdash;
+The thing name.
+  </p>
+</li>
+</ul>
+<p class="mkapi-section"><span class="mkapi-section-name">Returns</span></p>
+<ul>
+<li>
+<p><span class="mkapi-item-type">list</span> &mdash;
+The result list of dict of "get latest dweet for" API.
+  </p>
+</li>
+</ul>
 </div>
-<div class="mkapi-docstring">
-<div class="mkapi-section">
-      <div class="mkapi-section-body"><p>A class for messaging through the free dweet service.</p></div>
-    </div>
-  <div class="mkapi-section parameters">
-      <div class="mkapi-section-name parameters">
-          <span class="mkapi-section-name-body parameters">Parameters</span> 
-        </div>
-      <div class="mkapi-section-body parameters"><ul class="mkapi-items">
-<li><code class="mkapi-item-name">mailbox</code>
-<span class="mkapi-item-type">(str)</span>
-<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">A virtual mailbox through the free dweet service.</span></li>
-
-<li><code class="mkapi-item-name">key</code>
-<span class="mkapi-item-type">(str)</span>
-<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">The key to the virtual mailbox.</span></li>
-
-<li><code class="mkapi-item-name">debug</code>
-<span class="mkapi-item-type">(bool, optional)</span>
-<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">If it is <code>True</code>, exceptions will be printed.
+<hr />
+<div class="mkapi-content">
+<p class="mkapi-heading" id="dweeter.dweeter.CryptoDweet.get_dweets_for">
+<span class="mkapi-heading-name"><span class="mkapi-tooltip" title="dweeter">dweeter</span>.<span class="mkapi-tooltip" title="dweeter.dweeter">dweeter</span>.<span class="mkapi-tooltip" title="dweeter.dweeter.CryptoDweet">CryptoDweet</span>.get_dweets_for</span>
+<span class="mkapi-source-link"></span>
+</p>
+<p class="mkapi-object">
+  <span class="mkapi-object-kind">method</span>
+  <span class="mkapi-object-name"><span class="mkapi-prefix">CryptoDweet</span><span class="mkapi-dot">.</span><span class="mkapi-name">get_dweets_for</span></span><span class="mkapi-signature"><span class="mkapi-paren">(</span><span class="mkapi-arg">thing</span><span class="mkapi-colon">: </span><span class="mkapi-ann">str</span><span class="mkapi-paren">)</span><span class="mkapi-arrow"> → </span><span class="mkapi-return">list</span></span></p>
+<p>The "get dweets for" API.</p>
+<p class="mkapi-section"><span class="mkapi-section-name">Parameters</span></p>
+<ul>
+<li>
+<p><span class="mkapi-item-name">thing</span> : 
+  <span class="mkapi-item-type">str</span> &mdash;
+The thing name.
+  </p>
+</li>
+</ul>
+<p class="mkapi-section"><span class="mkapi-section-name">Returns</span></p>
+<ul>
+<li>
+<p><span class="mkapi-item-type">list</span> &mdash;
+The result list of dict of "get dweets for" API.
+  </p>
+</li>
+</ul>
+</div>
+<hr />
+<div class="mkapi-content">
+<p class="mkapi-heading" id="dweeter.dweeter.CryptoDweet.async_dweet_for">
+<span class="mkapi-heading-name"><span class="mkapi-tooltip" title="dweeter">dweeter</span>.<span class="mkapi-tooltip" title="dweeter.dweeter">dweeter</span>.<span class="mkapi-tooltip" title="dweeter.dweeter.CryptoDweet">CryptoDweet</span>.async_dweet_for</span>
+<span class="mkapi-source-link"></span>
+</p>
+<p class="mkapi-object">
+  <span class="mkapi-object-kind">method</span>
+  <span class="mkapi-object-name"><span class="mkapi-prefix">CryptoDweet</span><span class="mkapi-dot">.</span><span class="mkapi-name">async_dweet_for</span></span><span class="mkapi-signature"><span class="mkapi-paren">(</span><span class="mkapi-arg">thing</span><span class="mkapi-colon">: </span><span class="mkapi-ann">str</span><span class="mkapi-comma">, </span><span class="mkapi-arg">content_dict</span><span class="mkapi-colon">: </span><span class="mkapi-ann">dict[str, str]</span><span class="mkapi-paren">)</span><span class="mkapi-arrow"> → </span><span class="mkapi-return">dict</span></span></p>
+<p>The async "dweet for" API.</p>
+<p>The arguments have the same meaning as in <code>dweet_for</code>.</p>
+</div>
+<hr />
+<div class="mkapi-content">
+<p class="mkapi-heading" id="dweeter.dweeter.CryptoDweet.async_get_latest_dweet_for">
+<span class="mkapi-heading-name"><span class="mkapi-tooltip" title="dweeter">dweeter</span>.<span class="mkapi-tooltip" title="dweeter.dweeter">dweeter</span>.<span class="mkapi-tooltip" title="dweeter.dweeter.CryptoDweet">CryptoDweet</span>.async_get_latest_dweet_for</span>
+<span class="mkapi-source-link"></span>
+</p>
+<p class="mkapi-object">
+  <span class="mkapi-object-kind">method</span>
+  <span class="mkapi-object-name"><span class="mkapi-prefix">CryptoDweet</span><span class="mkapi-dot">.</span><span class="mkapi-name">async_get_latest_dweet_for</span></span><span class="mkapi-signature"><span class="mkapi-paren">(</span><span class="mkapi-arg">thing</span><span class="mkapi-colon">: </span><span class="mkapi-ann">str</span><span class="mkapi-paren">)</span><span class="mkapi-arrow"> → </span><span class="mkapi-return">list</span></span></p>
+<p>The async "get latest dweet for" API.</p>
+<p>The arguments have the same meaning as in <code>get_latest_dweet_for</code>.</p>
+</div>
+<hr />
+<div class="mkapi-content">
+<p class="mkapi-heading" id="dweeter.dweeter.CryptoDweet.async_get_dweets_for">
+<span class="mkapi-heading-name"><span class="mkapi-tooltip" title="dweeter">dweeter</span>.<span class="mkapi-tooltip" title="dweeter.dweeter">dweeter</span>.<span class="mkapi-tooltip" title="dweeter.dweeter.CryptoDweet">CryptoDweet</span>.async_get_dweets_for</span>
+<span class="mkapi-source-link"></span>
+</p>
+<p class="mkapi-object">
+  <span class="mkapi-object-kind">method</span>
+  <span class="mkapi-object-name"><span class="mkapi-prefix">CryptoDweet</span><span class="mkapi-dot">.</span><span class="mkapi-name">async_get_dweets_for</span></span><span class="mkapi-signature"><span class="mkapi-paren">(</span><span class="mkapi-arg">thing</span><span class="mkapi-colon">: </span><span class="mkapi-ann">str</span><span class="mkapi-paren">)</span><span class="mkapi-arrow"> → </span><span class="mkapi-return">list</span></span></p>
+<p>The async "get dweets for" API.</p>
+<p>The arguments have the same meaning as in <code>get_dweets_for</code>.</p>
+</div>
+<hr />
+<h2 id="dweeter_2">Dweeter</h2>
+<div class="mkapi-content">
+<p class="mkapi-heading" id="dweeter.dweeter.Dweeter">
+<span class="mkapi-heading-name"><span class="mkapi-tooltip" title="dweeter">dweeter</span>.<span class="mkapi-tooltip" title="dweeter.dweeter">dweeter</span>.Dweeter</span>
+<span class="mkapi-source-link"></span>
+</p>
+<p class="mkapi-object">
+  <span class="mkapi-object-kind">class</span>
+  <span class="mkapi-object-name"><span class="mkapi-name">Dweeter</span></span><span class="mkapi-signature"><span class="mkapi-paren">(</span><span class="mkapi-arg">mailbox</span><span class="mkapi-colon">: </span><span class="mkapi-ann">str</span><span class="mkapi-equal"> = </span><span class="mkapi-default">'default_mailbox'</span><span class="mkapi-comma">, </span><span class="mkapi-arg">key</span><span class="mkapi-colon">: </span><span class="mkapi-ann">str</span><span class="mkapi-equal"> = </span><span class="mkapi-default">'default_key'</span><span class="mkapi-comma">, </span><span class="mkapi-arg">debug</span><span class="mkapi-colon">: </span><span class="mkapi-ann">bool</span><span class="mkapi-equal"> = </span><span class="mkapi-default">False</span><span class="mkapi-comma">, </span><span class="mkapi-arg">base_url</span><span class="mkapi-colon">: </span><span class="mkapi-ann">str</span><span class="mkapi-equal"> = </span><span class="mkapi-default">DEFAULT_BASE_URL</span><span class="mkapi-comma">, </span><span class="mkapi-arg">use_base64</span><span class="mkapi-colon">: </span><span class="mkapi-ann">bool</span><span class="mkapi-equal"> = </span><span class="mkapi-default">False</span><span class="mkapi-paren">)</span></span></p>
+<p>A class for encrypted messaging through the free dweet service.</p>
+<p class="mkapi-section"><span class="mkapi-section-name">Parameters</span></p>
+<ul>
+<li>
+<p><span class="mkapi-item-name">mailbox</span>
+   &mdash;
+A virtual mailbox name.
+  </p>
+</li>
+<li>
+<p><span class="mkapi-item-name">key</span>
+   &mdash;
+The key to the virtual mailbox.
+  </p>
+</li>
+<li>
+<p><span class="mkapi-item-name">debug</span>
+   &mdash;
+If it is <code>True</code>, exceptions will be printed.
 Otherwise exceptions will be swallowed silently.
-(default is <code>False</code>)</span></li>
-
-<li><code class="mkapi-item-name">base_url</code>
-<span class="mkapi-item-type">(str, optional)</span>
-<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">The base url of the dweet server.
-(default is "https://dweet.io")</span></li>
-
-
-</ul></div>
-    </div>
-  <div class="mkapi-section attributes">
-      <div class="mkapi-section-name attributes">
-          <span class="mkapi-section-name-body attributes">Attributes</span> 
-        </div>
-      <div class="mkapi-section-body attributes"><ul class="mkapi-items">
-
-
-
-<li><code class="mkapi-item-name">debug</code>
-<span class="mkapi-item-type">(bool)</span>
-<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">If it is <code>True</code>, exceptions will be printed.
-Otherwise exceptions will be swallowed silently.</span></li>
-
-<li><code class="mkapi-item-name">get_new_data()</code>
-
-<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Receive the latest and new data_dict from the mailbox.</span></li>
-
-<li><code class="mkapi-item-name">latest</code>
-<span class="mkapi-item-type">(dict)</span>
-<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">The latest received data dictionary.</span></li>
-
-<li><code class="mkapi-item-name">mailbox</code>
-<span class="mkapi-item-type">(str)</span>
-<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">A virtual mailbox through the free dweet service.</span></li>
-
-<li><code class="mkapi-item-name">send_data(data_dict)</code>
-
-<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Send the data_dict to the mailbox.</span></li>
-
-
-</ul></div>
-    </div>
-  <div class="mkapi-section">
-      <div class="mkapi-section-body"><div class="admonition note">
+  </p>
+</li>
+<li>
+<p><span class="mkapi-item-name">base_url</span>
+   &mdash;
+The base url of the dweet server.
+  </p>
+</li>
+<li>
+<p><span class="mkapi-item-name">use_base64</span>
+   &mdash;
+Use base64 to make dweet content dictionary more compact.
+  </p>
+</li>
+</ul>
+<div class="admonition note">
 <p class="admonition-title">Notes</p>
-<p>With the same mailbox and a different key,
-it actually creates a different virtual mailbox.</p>
-</div></div>
-    </div>
-  <div class="mkapi-section methods">
-      <div class="mkapi-section-name methods">
-          <span class="mkapi-section-name-body methods">Methods</span> 
-        </div>
-      <div class="mkapi-section-body methods"><ul class="mkapi-items">
-<li class="method"><code class="mkapi-item-name"><a href="#dweeter.Dweeter.get_new_data">get_new_data</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-parenthesis">)</code>
-<span class="mkapi-item-type">(dict)</span>
-<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Receive the latest and new data_dict from the mailbox.</span></li>
-
-<li class="method"><code class="mkapi-item-name"><a href="#dweeter.Dweeter.send_data">send_data</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">data_dict</code><code class="mkapi-object-parenthesis">)</code>
-<span class="mkapi-item-type">(dict)</span>
-<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Send the data_dict to the mailbox.</span></li>
-
-
-</ul></div>
-    </div>
-  </div>
-
-  <div class="mkapi-members">
-  
-    <div class="mkapi-member">
-      <div class="mkapi-node" id="dweeter.Dweeter.send_data">
-<div class='mkapi-object-container'>
-  <div class="mkapi-object method code">
-    <div class="mkapi-object-kind method">method</div>
-    <div class="mkapi-object-body method"><code class="mkapi-object-name">send_data</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">data_dict</code><code class="mkapi-object-parenthesis">)</code></div>
-  </div>
-  
+<p>With the same <code>mailbox</code>,
+when using a different <code>key</code> or different <code>use_base64</code> settings,
+it actually creates a different thing name in dweet service.</p>
 </div>
-<div class="mkapi-docstring">
-<div class="mkapi-section">
-      <div class="mkapi-section-body"><p>Send the data_dict to the mailbox.</p></div>
-    </div>
-  <div class="mkapi-section parameters">
-      <div class="mkapi-section-name parameters">
-          <span class="mkapi-section-name-body parameters">Parameters</span> 
-        </div>
-      <div class="mkapi-section-body parameters"><ul class="mkapi-items">
-<li><code class="mkapi-item-name">data_dict</code>
-<span class="mkapi-item-type">(dict)</span>
-<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">The data dictionary to send to the mailbox.
+<p class="mkapi-section"><span class="mkapi-section-name">Methods</span></p>
+<ul>
+<li>
+<p><span class="mkapi-item-type"><span class="mkapi-tooltip" title="dweeter.dweeter.Dweeter.send_data">send_data</span></span> &mdash;
+Send <code>data_dict</code> to the mailbox.
+  </p>
+</li>
+<li>
+<p><span class="mkapi-item-type"><span class="mkapi-tooltip" title="dweeter.dweeter.Dweeter.get_new_data">get_new_data</span></span> &mdash;
+Receive the latest and new <code>data_dict</code> from the mailbox.
+  </p>
+</li>
+<li>
+<p><span class="mkapi-item-type"><span class="mkapi-tooltip" title="dweeter.dweeter.Dweeter.async_send_data">async_send_data</span></span> &mdash;
+Send <code>data_dict</code> to the mailbox asynchronously.
+  </p>
+</li>
+<li>
+<p><span class="mkapi-item-type"><span class="mkapi-tooltip" title="dweeter.dweeter.Dweeter.async_get_new_data">async_get_new_data</span></span> &mdash;
+Receive the latest and new <code>data_dict</code> from the mailbox asynchronously.
+  </p>
+</li>
+</ul>
+</div>
+<hr />
+<div class="mkapi-content">
+<p class="mkapi-heading" id="dweeter.dweeter.Dweeter.send_data">
+<span class="mkapi-heading-name"><span class="mkapi-tooltip" title="dweeter">dweeter</span>.<span class="mkapi-tooltip" title="dweeter.dweeter">dweeter</span>.<span class="mkapi-tooltip" title="dweeter.dweeter.Dweeter">Dweeter</span>.send_data</span>
+<span class="mkapi-source-link"></span>
+</p>
+<p class="mkapi-object">
+  <span class="mkapi-object-kind">method</span>
+  <span class="mkapi-object-name"><span class="mkapi-prefix">Dweeter</span><span class="mkapi-dot">.</span><span class="mkapi-name">send_data</span></span><span class="mkapi-signature"><span class="mkapi-paren">(</span><span class="mkapi-arg">data_dict</span><span class="mkapi-colon">: </span><span class="mkapi-ann">dict</span><span class="mkapi-paren">)</span><span class="mkapi-arrow"> → </span><span class="mkapi-return">dict</span></span></p>
+<p>Send <code>data_dict</code> to the mailbox.</p>
+<p class="mkapi-section"><span class="mkapi-section-name">Parameters</span></p>
+<ul>
+<li>
+<p><span class="mkapi-item-name">data_dict</span> : 
+  <span class="mkapi-item-type">dict</span> &mdash;
+The data dictionary to send to the mailbox.
 This dictionary must be json compatible.
 There are 2 keys reserved for data_dict.
-One is "created_time", the dweet service time.
-The other is "remote_time", the local time of the remote device.</span></li>
-
-
-</ul></div>
-    </div>
-  <div class="mkapi-section returns">
-      <div class="mkapi-section-name returns">
-          <span class="mkapi-section-name-body returns">Returns</span> <span class="mkapi-item-type">(dict)</span>
-        </div>
-      <div class="mkapi-section-body returns"><p>The dweet transaction dict returned from dweet service.
-It should include the keys of 'thing', 'content', 'created'
-and 'transaction'.</p></div>
-    </div>
-  </div>
-
+One is <code>created_time</code>, the dweet service time.
+The other is <code>remote_time</code>, the local time of the remote device.
+  </p>
+</li>
+</ul>
+<p class="mkapi-section"><span class="mkapi-section-name">Returns</span></p>
+<ul>
+<li>
+<p><span class="mkapi-item-type">dict</span> &mdash;
+The dweet transaction dict returned from dweet service.
+It should include the keys of <code>thing</code>, <code>content</code>, <code>created</code>
+and <code>transaction</code>.
+  </p>
+</li>
+</ul>
+<p class="mkapi-section"><span class="mkapi-section-name">Raises</span></p>
+<ul>
+<li>
+<p><span class="mkapi-item-type"><span class="mkapi-tooltip" title="dweeter.dweeter.DweeterError">DweeterError</span></span>
+  </p>
+</li>
+</ul>
 </div>
-    </div>
-  
-    <div class="mkapi-member">
-      <div class="mkapi-node" id="dweeter.Dweeter.get_new_data">
-<div class='mkapi-object-container'>
-  <div class="mkapi-object method code">
-    <div class="mkapi-object-kind method">method</div>
-    <div class="mkapi-object-body method"><code class="mkapi-object-name">get_new_data</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-parenthesis">)</code></div>
-  </div>
-  
+<hr />
+<div class="mkapi-content">
+<p class="mkapi-heading" id="dweeter.dweeter.Dweeter.get_new_data">
+<span class="mkapi-heading-name"><span class="mkapi-tooltip" title="dweeter">dweeter</span>.<span class="mkapi-tooltip" title="dweeter.dweeter">dweeter</span>.<span class="mkapi-tooltip" title="dweeter.dweeter.Dweeter">Dweeter</span>.get_new_data</span>
+<span class="mkapi-source-link"></span>
+</p>
+<p class="mkapi-object">
+  <span class="mkapi-object-kind">method</span>
+  <span class="mkapi-object-name"><span class="mkapi-prefix">Dweeter</span><span class="mkapi-dot">.</span><span class="mkapi-name">get_new_data</span></span><span class="mkapi-signature"><span class="mkapi-paren">(</span><span class="mkapi-paren">)</span><span class="mkapi-arrow"> → </span><span class="mkapi-return">dict</span></span></p>
+<p>Receive the latest and new <code>data_dict</code> from the mailbox.</p>
+<p class="mkapi-section"><span class="mkapi-section-name">Returns</span></p>
+<ul>
+<li>
+<p><span class="mkapi-item-type">dict</span> &mdash;
+The latest and new data dictionary from the mailbox.
+None will be returned if the latest <code>data_dict</code> is old.
+  </p>
+</li>
+</ul>
+<p class="mkapi-section"><span class="mkapi-section-name">Raises</span></p>
+<ul>
+<li>
+<p><span class="mkapi-item-type"><span class="mkapi-tooltip" title="dweeter.dweeter.DweeterError">DweeterError</span></span>
+  </p>
+</li>
+</ul>
 </div>
-<div class="mkapi-docstring">
-<div class="mkapi-section">
-      <div class="mkapi-section-body"><p>Receive the latest and new data_dict from the mailbox.</p></div>
-    </div>
-  <div class="mkapi-section returns">
-      <div class="mkapi-section-name returns">
-          <span class="mkapi-section-name-body returns">Returns</span> <span class="mkapi-item-type">(dict)</span>
-        </div>
-      <div class="mkapi-section-body returns"><p>The latest and new data dictionary from the mailbox.
-None will be returned if the latest data_dict is old.</p></div>
-    </div>
-  </div>
+<hr />
+<div class="mkapi-content">
+<p class="mkapi-heading" id="dweeter.dweeter.Dweeter.async_send_data">
+<span class="mkapi-heading-name"><span class="mkapi-tooltip" title="dweeter">dweeter</span>.<span class="mkapi-tooltip" title="dweeter.dweeter">dweeter</span>.<span class="mkapi-tooltip" title="dweeter.dweeter.Dweeter">Dweeter</span>.async_send_data</span>
+<span class="mkapi-source-link"></span>
+</p>
+<p class="mkapi-object">
+  <span class="mkapi-object-kind">method</span>
+  <span class="mkapi-object-name"><span class="mkapi-prefix">Dweeter</span><span class="mkapi-dot">.</span><span class="mkapi-name">async_send_data</span></span><span class="mkapi-signature"><span class="mkapi-paren">(</span><span class="mkapi-arg">data_dict</span><span class="mkapi-colon">: </span><span class="mkapi-ann">dict</span><span class="mkapi-paren">)</span><span class="mkapi-arrow"> → </span><span class="mkapi-return">dict</span></span></p>
+<p>Send <code>data_dict</code> to the mailbox asynchronously.</p>
+<p>The arguments have the same meaning as in <code>send_data</code>.</p>
+<p class="mkapi-section"><span class="mkapi-section-name">Raises</span></p>
+<ul>
+<li>
+<p><span class="mkapi-item-type"><span class="mkapi-tooltip" title="dweeter.dweeter.DweeterError">DweeterError</span></span>
+  </p>
+</li>
+</ul>
+</div>
+<hr />
+<div class="mkapi-content">
+<p class="mkapi-heading" id="dweeter.dweeter.Dweeter.async_get_new_data">
+<span class="mkapi-heading-name"><span class="mkapi-tooltip" title="dweeter">dweeter</span>.<span class="mkapi-tooltip" title="dweeter.dweeter">dweeter</span>.<span class="mkapi-tooltip" title="dweeter.dweeter.Dweeter">Dweeter</span>.async_get_new_data</span>
+<span class="mkapi-source-link"></span>
+</p>
+<p class="mkapi-object">
+  <span class="mkapi-object-kind">method</span>
+  <span class="mkapi-object-name"><span class="mkapi-prefix">Dweeter</span><span class="mkapi-dot">.</span><span class="mkapi-name">async_get_new_data</span></span><span class="mkapi-signature"><span class="mkapi-paren">(</span><span class="mkapi-paren">)</span><span class="mkapi-arrow"> → </span><span class="mkapi-return">dict</span></span></p>
+<p>Receive the latest and new <code>data_dict</code> from the mailbox asynchronously.</p>
+<p>The arguments have the same meaning as in <code>get_new_data</code>.</p>
+<p class="mkapi-section"><span class="mkapi-section-name">Raises</span></p>
+<ul>
+<li>
+<p><span class="mkapi-item-type"><span class="mkapi-tooltip" title="dweeter.dweeter.DweeterError">DweeterError</span></span>
+  </p>
+</li>
+</ul>
+</div>
 
-</div>
-    </div>
-  
-  </div>
 
-</div>
-    </div>
-  
-  </div>
 
-</div>
-              
+
+
+
+
+
+
+
+
+
+                
+              </article>
             </div>
-          </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href=".." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-    </div>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <!-- Copyright etc -->
-      <p>Copyright &copy; 2022 <a href="https://github.com/jacklinquan">Quan Lin</a>.</p>
-  </div>
-
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-</footer>
           
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
-      </div>
-
-    </section>
-
-  </div>
-
-  <div class="rst-versions" role="note" aria-label="Versions">
-  <span class="rst-current-version" data-toggle="rst-current-version">
-    
-        <span>
-          <a href="https://github.com/jacklinquan/dweeter" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
-        </span>
-    
-    
-      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
-    
-    
-  </span>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 <a href="https://github.com/jacklinquan">Quan Lin</a>.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
 </div>
-    <script>var base_url = '..';</script>
-    <script src="../js/theme_extra.js" defer></script>
-    <script src="../js/theme.js" defer></script>
-      <script src="../js/mkapi.js" defer></script>
-      <script src="../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
-            SphinxRtdTheme.Navigation.enable(true);
-        };
-    </script>
-
-</body>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+    
+  </body>
 </html>

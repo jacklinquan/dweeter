@@ -1,151 +1,731 @@
-<!DOCTYPE html>
-<html class="writer-html5" lang="en" >
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="A python module for messaging through the free dweet service." /><meta name="author" content="Quan Lin" />
-      <link rel="shortcut icon" href="img/favicon.ico" />
-    <title>dweeter</title>
-    <link rel="stylesheet" href="css/theme.css" />
-    <link rel="stylesheet" href="css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
-        <link href="//use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet" />
-        <link href="//use.fontawesome.com/releases/v5.8.1/css/v4-shims.css" rel="stylesheet" />
-        <link href="css/mkapi-common.css" rel="stylesheet" />
-        <link href="css/mkapi-readthedocs.css" rel="stylesheet" />
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
     
-      <script>
-        // Current page data
-        var mkdocs_page_name = "Home";
-        var mkdocs_page_input_path = "index.md";
-        var mkdocs_page_url = null;
-      </script>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Encrypted messaging through the free dweet service.">
+      
+      
+        <meta name="author" content="Quan Lin">
+      
+      
+      
+      
+        <link rel="next" href="api/">
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.28">
     
-    <script src="js/jquery-3.6.0.min.js" defer></script>
-    <!--[if lt IE 9]>
-      <script src="js/html5shiv.min.js"></script>
-    <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-      <script>hljs.initHighlightingOnLoad();</script> 
-</head>
+    
+      
+        <title>Dweeter</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.6543a935.min.css">
+      
+      
 
-<body class="wy-body-for-nav" role="document">
 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-    <div class="wy-side-scroll">
-      <div class="wy-side-nav-search">
-          <a href="." class="icon icon-home"> dweeter
-        </a><div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
-  </form>
-</div>
-      </div>
-
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href=".">Home</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a>
-    </li>
-    </ul>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="api/">API Documentation</a>
-                </li>
-              </ul>
-      </div>
-    </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href=".">dweeter</a>
+    
+    
+      
+    
+    
+      
         
-      </nav>
-      <div class="wy-nav-content">
-        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-      <li>Home</li>
-    <li class="wy-breadcrumbs-aside">
-    </li>
-  </ul>
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-            <div class="section" itemprop="articleBody">
-              
-                <h1 id="dweeter">dweeter</h1>
-<p>A python module for messaging through the free dweet service.
-Dweet is a simple machine-to-machine (M2M) service from <a href="https://dweet.io">dweet.io</a>.</p>
-<h2 id="installation">Installation</h2>
-<p><code>pip install dweeter</code></p>
-<h2 id="usage">Usage</h2>
-<pre><code class="language-python">&gt;&gt;&gt; from dweeter import Dweeter
-&gt;&gt;&gt; dwtr = Dweeter(&quot;YOUR MAILBOX&quot;, &quot;YOUR KEY&quot;)
-&gt;&gt;&gt; dwtr.send_data({&quot;STRING DATA&quot;: &quot;STRING VALUE&quot;, &quot;INT DATA&quot;: 100, &quot;FLOAT DATA&quot;: 3.14, &quot;BOOL DATA&quot;: True})
-{'thing': '3e7cb39f82fb1ac29e40b935a3cbbaed', 'created': '2022-05-30T04:15:54.787Z', 'content': {'68fcbe24759c8aeb21633df279049eb441eb7c7bcb8b4645f206f55f659fd198': '3aef3ed5ce517e4da35874b765c989256adf568525d43f8da6c2bab602ec5934c667da430fc4e43705699e57ced03d20a270fef33bfc7d1cc2b4f00255c794f00497d29717499ec0c2296b8b52fbef6e015ac0be42de9c8fdfb5f85a5455412cc14bb40acb0f9eaeb606a027b2de1acf94c630f86b5eac56add50048cad47fe5f1b2a699088153e0bf8aa3247192badc'}, 'transaction': '342e85f2-c4dc-4831-a746-e45f50885092'}
-&gt;&gt;&gt; dwtr.get_new_data()
-{'STRING DATA': 'STRING VALUE', 'INT DATA': 100, 'FLOAT DATA': 3.14, 'BOOL DATA': True, 'remote_time': '2022-05-30T04:15:49.000Z', 'created_time': '2022-05-30T04:15:54.787Z'}
-</code></pre>
-              
-            </div>
-          </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="api/" class="btn btn-neutral float-right" title="API Documentation">Next <span class="icon icon-circle-arrow-right"></span></a>
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="mkapi-common.css">
+    
+      <link rel="stylesheet" href="mkapi-material.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dweeter" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
 
-  <hr/>
+  
 
-  <div role="contentinfo">
-    <!-- Copyright etc -->
-      <p>Copyright &copy; 2022 <a href="https://github.com/jacklinquan">Quan Lin</a>.</p>
-  </div>
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="Dweeter" class="md-header__button md-logo" aria-label="Dweeter" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
 
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-</footer>
-          
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dweeter
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Home
+            
+          </span>
         </div>
       </div>
-
-    </section>
-
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="rst-versions" role="note" aria-label="Versions">
-  <span class="rst-current-version" data-toggle="rst-current-version">
-    
-        <span>
-          <a href="https://github.com/jacklinquan/dweeter" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
-        </span>
-    
-    
-    
-      <span><a href="api/" style="color: #fcfcfc">Next &raquo;</a></span>
-    
-  </span>
 </div>
-    <script>var base_url = '.';</script>
-    <script src="js/theme_extra.js" defer></script>
-    <script src="js/theme.js" defer></script>
-      <script src="js/mkapi.js" defer></script>
-      <script src="search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
-            SphinxRtdTheme.Navigation.enable(true);
-        };
-    </script>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/jacklinquan/dweeter" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
 
-</body>
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Dweeter" class="md-nav__button md-logo" aria-label="Dweeter" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Dweeter
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/jacklinquan/dweeter" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#synchronous-programming" class="md-nav__link">
+    <span class="md-ellipsis">
+      Synchronous Programming
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asynchronous-programming" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asynchronous Programming
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#synchronous-programming_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Synchronous Programming
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asynchronous-programming_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asynchronous Programming
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Build documentation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#change" class="md-nav__link">
+    <span class="md-ellipsis">
+      Change
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-messaging-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      On messaging security
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API Documentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#synchronous-programming" class="md-nav__link">
+    <span class="md-ellipsis">
+      Synchronous Programming
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asynchronous-programming" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asynchronous Programming
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#synchronous-programming_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Synchronous Programming
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asynchronous-programming_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asynchronous Programming
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Build documentation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#change" class="md-nav__link">
+    <span class="md-ellipsis">
+      Change
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-messaging-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      On messaging security
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="dweeter">Dweeter</h1>
+<p><a href="https://badge.fury.io/py/dweeter"><img alt="PyPI version" src="https://badge.fury.io/py/dweeter.svg" /></a>
+<a href="https://pepy.tech/project/dweeter"><img alt="Downloads" src="https://pepy.tech/badge/dweeter" /></a></p>
+<p><a href="https://jacklinquan.github.io/dweeter">Documentation</a></p>
+<p>Encrypted messaging through the free dweet service.
+Dweet is a simple machine-to-machine (M2M) service from <a href="https://dweet.io">dweet.io</a>.</p>
+<p>It also can be used in MicroPython.</p>
+<hr />
+<h2 id="installation">Installation</h2>
+<h3 id="synchronous-programming">Synchronous Programming</h3>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>dweeter
+</code></pre></div>
+<h3 id="asynchronous-programming">Asynchronous Programming</h3>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>dweeter<span class="o">[</span>aiohttp<span class="o">]</span>
+</code></pre></div>
+<hr />
+<h2 id="usage">Usage</h2>
+<h3 id="synchronous-programming_1">Synchronous Programming</h3>
+<details open><summary>Code</summary>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">dweeter</span> <span class="kn">import</span> <span class="n">Dweeter</span>
+
+<span class="n">dwtr</span> <span class="o">=</span> <span class="n">Dweeter</span><span class="p">(</span><span class="s2">&quot;MAILBOX_NAME&quot;</span><span class="p">,</span> <span class="s2">&quot;KEY_TO_MAILBOX&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">dwtr</span><span class="o">.</span><span class="n">send_data</span><span class="p">({</span><span class="s2">&quot;DATA_1&quot;</span><span class="p">:</span> <span class="s2">&quot;VALUE_1&quot;</span><span class="p">}))</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dwtr</span><span class="o">.</span><span class="n">get_new_data</span><span class="p">())</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dwtr</span><span class="o">.</span><span class="n">send_data</span><span class="p">({</span><span class="s2">&quot;DATA_2&quot;</span><span class="p">:</span> <span class="s2">&quot;VALUE_2&quot;</span><span class="p">}))</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dwtr</span><span class="o">.</span><span class="n">get_new_data</span><span class="p">())</span>
+</code></pre></div>
+</details>
+
+<details open><summary>Output</summary>
+
+<div class="highlight"><pre><span></span><code>{&#39;thing&#39;: &#39;42e6ae04e842cadca8a814fea06bcf6d&#39;, &#39;created&#39;: &#39;2024-07-15T05:11:32.709Z&#39;, &#39;content&#39;: {&#39;904b0c7d2cfe0dd2501e7f25101fb92457f58052e8526dafb38b883438896980&#39;: &#39;4c03f62878dd6d9befdc92e00a2a1bd4906c9590838f7758062e37b99c05b696cb01b729f7c9faa6962726e5dc6a4b1ad522dd0dceb3870106a67ebaedf9868b87548e04347fbc721e152f03ac405fb1&#39;}, &#39;transaction&#39;: &#39;c8f956a5-e516-4ad4-afa5-5035d4206179&#39;}
+{&#39;DATA_1&#39;: &#39;VALUE_1&#39;, &#39;remote_time&#39;: &#39;2024-07-15T05:11:31.000Z&#39;, &#39;created_time&#39;: &#39;2024-07-15T05:11:32.709Z&#39;}
+{&#39;thing&#39;: &#39;42e6ae04e842cadca8a814fea06bcf6d&#39;, &#39;created&#39;: &#39;2024-07-15T05:11:38.580Z&#39;, &#39;content&#39;: {&#39;904b0c7d2cfe0dd2501e7f25101fb924cb74208c05dc802c752e5e2717f4c717&#39;: &#39;10753b950ecdcbf5a9b7cd82f82c3bac7d5b522a175897e2db32457d6f373cbc2fe8f7ef551284de110e6b9abfa058404b8f9d4126e18d3c32e137e5902f298c722cf8261460613602484dae350cb8f6&#39;}, &#39;transaction&#39;: &#39;2dcec037-9b02-4dc2-a6c1-26cc0beb4e03&#39;}
+{&#39;DATA_2&#39;: &#39;VALUE_2&#39;, &#39;remote_time&#39;: &#39;2024-07-15T05:11:37.000Z&#39;, &#39;created_time&#39;: &#39;2024-07-15T05:11:38.580Z&#39;}
+</code></pre></div>
+</details>
+
+<h3 id="asynchronous-programming_1">Asynchronous Programming</h3>
+<details><summary>Code</summary>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">dweeter</span> <span class="kn">import</span> <span class="n">Dweeter</span>
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">async_main</span><span class="p">():</span>
+    <span class="n">dwtr</span> <span class="o">=</span> <span class="n">Dweeter</span><span class="p">(</span><span class="s2">&quot;MAILBOX_NAME&quot;</span><span class="p">,</span> <span class="s2">&quot;KEY_TO_MAILBOX&quot;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="k">await</span> <span class="n">dwtr</span><span class="o">.</span><span class="n">async_send_data</span><span class="p">({</span><span class="s2">&quot;DATA_1&quot;</span><span class="p">:</span> <span class="s2">&quot;VALUE_1&quot;</span><span class="p">}))</span>
+    <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="k">await</span> <span class="n">dwtr</span><span class="o">.</span><span class="n">async_get_new_data</span><span class="p">())</span>
+    <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="k">await</span> <span class="n">dwtr</span><span class="o">.</span><span class="n">async_send_data</span><span class="p">({</span><span class="s2">&quot;DATA_2&quot;</span><span class="p">:</span> <span class="s2">&quot;VALUE_2&quot;</span><span class="p">}))</span>
+    <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="k">await</span> <span class="n">dwtr</span><span class="o">.</span><span class="n">async_get_new_data</span><span class="p">())</span>
+
+<span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">async_main</span><span class="p">())</span>
+</code></pre></div>
+</details>
+
+<details><summary>Output</summary>
+
+<div class="highlight"><pre><span></span><code>{&#39;thing&#39;: &#39;42e6ae04e842cadca8a814fea06bcf6d&#39;, &#39;created&#39;: &#39;2024-07-15T05:12:20.059Z&#39;, &#39;content&#39;: {&#39;0d93e2a03ea4fea5741276e310398b65e6f55f0456d6d2bb74b01ffca22bf9ba&#39;: &#39;4c03f62878dd6d9befdc92e00a2a1bd4906c9590838f7758062e37b99c05b696cb01b729f7c9faa6962726e5dc6a4b1a3b18b95d5e6552c4b61913acf2861b0e3a45a4113ac684bc5a08bf5a82d65816&#39;}, &#39;transaction&#39;: &#39;e5b08537-2c14-4ce9-be72-5d804607ce26&#39;}
+{&#39;DATA_1&#39;: &#39;VALUE_1&#39;, &#39;remote_time&#39;: &#39;2024-07-15T05:12:19.000Z&#39;, &#39;created_time&#39;: &#39;2024-07-15T05:12:20.059Z&#39;}
+{&#39;thing&#39;: &#39;42e6ae04e842cadca8a814fea06bcf6d&#39;, &#39;created&#39;: &#39;2024-07-15T05:12:25.941Z&#39;, &#39;content&#39;: {&#39;0d93e2a03ea4fea5741276e310398b6557ef5805e83d93aa199097fd01b51821&#39;: &#39;10753b950ecdcbf5a9b7cd82f82c3bac7d5b522a175897e2db32457d6f373cbc2fe8f7ef551284de110e6b9abfa05840066efe7671423a88111a87a6a58076595fee9457ed0fa115dc463cf66c031017&#39;}, &#39;transaction&#39;: &#39;b025efed-16ab-46ba-96f3-4df72ef5dcdf&#39;}
+{&#39;DATA_2&#39;: &#39;VALUE_2&#39;, &#39;remote_time&#39;: &#39;2024-07-15T05:12:25.000Z&#39;, &#39;created_time&#39;: &#39;2024-07-15T05:12:25.941Z&#39;}
+</code></pre></div>
+</details>
+
+<hr />
+<h2 id="test">Test</h2>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pytest
+</code></pre></div>
+<hr />
+<h2 id="build-documentation">Build documentation</h2>
+<div class="highlight"><pre><span></span><code>mkdocs<span class="w"> </span>build
+</code></pre></div>
+<hr />
+<h2 id="change">Change</h2>
+<ul>
+<li>v0.3.0:<ul>
+<li><code>CryptoDweet</code> class is added.</li>
+<li>Asynchronous methods are added for asynchronous programming.</li>
+<li>Dweet content dictionary can be encoded with base64 to be more compact.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="on-messaging-security">On messaging security</h2>
+<p>The free dweet service is public.
+By "public", it means:</p>
+<ul>
+<li>Every one on Internet can see what you are sending.</li>
+<li>Every one can send something for the same "thing" name to confuse you.</li>
+</ul>
+<p>The publicly exposed user information:</p>
+<ul>
+<li>The "thing" name, which you can think of as the unique virtual mailbox name.</li>
+<li>The keys of the "content" dictionary.</li>
+<li>The values of the "content" dictionary.</li>
+</ul>
+<p>The dweeter module wraps the contents as a single key-value pair.
+So there is only one key and one value in the "content" dictionary.
+And the "thing" name and the "content" dictionary are encrypted.
+So no one knows what they mean.</p>
+<p>Without knowing what the information means,
+potential attackers can still send something for the same "thing" name.
+Because the "content" dictionary is encrypted,
+the only way to do this is to capture a bunch of messages
+and send them randomly.
+The key and the value of the "content" dictionary both include
+the same time stamp.
+A mismatch of them will result in an error that is handled by dweeter.
+But a copy of the whole "content" dictionary could
+still be passed on to the receiver.
+This is often referred to as "replay attack".</p>
+<p>The decrypted user data dictionary includes 2 extra key-value pairs:</p>
+<ul>
+<li>"created_time", the timestamp from the dweet service.</li>
+<li>"remote_time", the timestamp from the sending device.</li>
+</ul>
+<p>You can compare these two timestamps to decide if a "replay attack" happened.
+On a micropython device, you can use <code>ntptime.settime()</code> to set the local time.
+Be aware of a normal gap between "created_time" and "remote_time".
+On a PC I observed 4 to 5 seconds difference.
+On a micropython device I observed 8 to 9 seconds difference.
+This time difference could vary from case to case.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 <a href="https://github.com/jacklinquan">Quan Lin</a>.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+    
+  </body>
 </html>
-
-<!--
-MkDocs version : 1.3.1
-Build Date UTC : 2022-08-31 00:22:47.560918+00:00
--->
